@@ -37,6 +37,7 @@
             this.cmbInfo = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
+            this.BtnEnd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblMap
@@ -76,7 +77,7 @@
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(649, 105);
+            this.lblTime.Location = new System.Drawing.Point(12, 9);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(62, 25);
             this.lblTime.TabIndex = 3;
@@ -90,9 +91,9 @@
             // cmbInfo
             // 
             this.cmbInfo.FormattingEnabled = true;
-            this.cmbInfo.Location = new System.Drawing.Point(477, 483);
+            this.cmbInfo.Location = new System.Drawing.Point(628, 450);
             this.cmbInfo.Name = "cmbInfo";
-            this.cmbInfo.Size = new System.Drawing.Size(261, 24);
+            this.cmbInfo.Size = new System.Drawing.Size(243, 24);
             this.cmbInfo.TabIndex = 4;
             this.cmbInfo.SelectedIndexChanged += new System.EventHandler(this.cmbInfo_SelectedIndexChanged);
             // 
@@ -118,11 +119,24 @@
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
+            // BtnEnd
+            // 
+            this.BtnEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnEnd.Location = new System.Drawing.Point(790, 545);
+            this.BtnEnd.Name = "BtnEnd";
+            this.BtnEnd.Size = new System.Drawing.Size(110, 60);
+            this.BtnEnd.TabIndex = 7;
+            this.BtnEnd.Text = "Save and close";
+            this.BtnEnd.UseVisualStyleBackColor = true;
+            this.BtnEnd.Click += new System.EventHandler(this.BtnEnd_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(912, 617);
+            this.Controls.Add(this.BtnEnd);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.cmbInfo);
@@ -148,6 +162,7 @@
         private System.Windows.Forms.ComboBox cmbInfo;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.Button BtnEnd;
     }
 }
 

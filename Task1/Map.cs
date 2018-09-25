@@ -233,7 +233,7 @@ namespace Task1
             return value;
         }
 
-        public string UnitsCombo(int i)
+        public string UnitsCombo(int i) //returns the units to string for the  combo box
         {
             return units[i].ToString();
         }
@@ -245,7 +245,7 @@ namespace Task1
 
         int arraySize;
 
-        public void placeNewUnit(int counter)
+        public void placeNewUnit(int counter) //places new unit
         {
             arraySize = units.Length + 1;
             for (int i = 0; i < numBuildings - 1; i++)

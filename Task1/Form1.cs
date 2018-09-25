@@ -59,7 +59,7 @@ namespace Task1
         private void btnStop_Click(object sender, EventArgs e)
         {
             tmTick.Enabled = false;
-            tmTick.Stop();
+            tmTick.Stop();           
         }
 
         private void cmbInfo_SelectedIndexChanged(object sender, EventArgs e)
@@ -87,6 +87,12 @@ namespace Task1
             {
                 cmbInfo.Items.Add(Game.BuildInfo(i));
             }
+        }
+
+        private void BtnEnd_Click(object sender, EventArgs e)
+        {
+            Game.SaveAll();
+            this.Close();
         }
     }
 }

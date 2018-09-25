@@ -47,7 +47,7 @@ namespace Task1
             return name+ "," + symbol + "," + team + "," + xPos + "," + yPos + ","  + HP;
         }
 
-        public override void SaveUnit()
+        public override void SaveUnit() //saves the unit to string to a text file
         {
             if (Directory.Exists("saves") != true)
             {

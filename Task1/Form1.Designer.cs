@@ -40,6 +40,7 @@
             this.BtnEnd = new System.Windows.Forms.Button();
             this.btnChange = new System.Windows.Forms.Button();
             this.btnKill = new System.Windows.Forms.Button();
+            this.btnRandom = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblMap
@@ -135,9 +136,9 @@
             // btnChange
             // 
             this.btnChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChange.Location = new System.Drawing.Point(790, 12);
+            this.btnChange.Location = new System.Drawing.Point(773, 12);
             this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(110, 60);
+            this.btnChange.Size = new System.Drawing.Size(127, 60);
             this.btnChange.TabIndex = 8;
             this.btnChange.Text = "Change Teams";
             this.btnChange.UseVisualStyleBackColor = true;
@@ -146,13 +147,24 @@
             // btnKill
             // 
             this.btnKill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKill.Location = new System.Drawing.Point(790, 78);
+            this.btnKill.Location = new System.Drawing.Point(773, 78);
             this.btnKill.Name = "btnKill";
-            this.btnKill.Size = new System.Drawing.Size(110, 60);
+            this.btnKill.Size = new System.Drawing.Size(127, 60);
             this.btnKill.TabIndex = 9;
             this.btnKill.Text = "Kill all";
             this.btnKill.UseVisualStyleBackColor = true;
             this.btnKill.Click += new System.EventHandler(this.btnKill_Click);
+            // 
+            // btnRandom
+            // 
+            this.btnRandom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRandom.Location = new System.Drawing.Point(773, 144);
+            this.btnRandom.Name = "btnRandom";
+            this.btnRandom.Size = new System.Drawing.Size(127, 60);
+            this.btnRandom.TabIndex = 10;
+            this.btnRandom.Text = "Randomize symbols";
+            this.btnRandom.UseVisualStyleBackColor = true;
+            this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
             // 
             // Form1
             // 
@@ -160,6 +172,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(912, 617);
+            this.Controls.Add(this.btnRandom);
             this.Controls.Add(this.btnKill);
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.BtnEnd);
@@ -191,6 +204,7 @@
         private System.Windows.Forms.Button BtnEnd;
         private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.Button btnKill;
+        private System.Windows.Forms.Button btnRandom;
     }
 }
 

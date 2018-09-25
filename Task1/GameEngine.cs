@@ -71,5 +71,10 @@
         {
             gameMap.Change();
         }
+
+        public void randomSymbol()
+        {
+            gameMap.randSymbols();
+        }
     }
 }

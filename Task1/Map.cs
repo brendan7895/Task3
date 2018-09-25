@@ -423,9 +423,19 @@ namespace Task1
                 {
                     units[i].Team = "M";
                 }
+            }   
+        }
+
+        public void randSymbols() //randomises the symbols using ascii using 0 to 1000
+        {
+            for(int i = 0; i < numUnits; i++)
+            {
+                int unicode = rand.Next(0, 10001);
+                char character = (char)unicode;
+                string text = character.ToString();
+                units[i].Symbol = text;
+                mapArr[units[i].XPos, units[i].YPos] = units[i].Symbol;
             }
-            
-            
         }
     }
 }

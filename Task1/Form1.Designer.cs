@@ -38,6 +38,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
             this.BtnEnd = new System.Windows.Forms.Button();
+            this.btnChange = new System.Windows.Forms.Button();
+            this.btnKill = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblMap
@@ -130,12 +132,36 @@
             this.BtnEnd.UseVisualStyleBackColor = true;
             this.BtnEnd.Click += new System.EventHandler(this.BtnEnd_Click);
             // 
+            // btnChange
+            // 
+            this.btnChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChange.Location = new System.Drawing.Point(790, 12);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(110, 60);
+            this.btnChange.TabIndex = 8;
+            this.btnChange.Text = "Change Teams";
+            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
+            // 
+            // btnKill
+            // 
+            this.btnKill.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKill.Location = new System.Drawing.Point(790, 78);
+            this.btnKill.Name = "btnKill";
+            this.btnKill.Size = new System.Drawing.Size(110, 60);
+            this.btnKill.TabIndex = 9;
+            this.btnKill.Text = "Kill all";
+            this.btnKill.UseVisualStyleBackColor = true;
+            this.btnKill.Click += new System.EventHandler(this.btnKill_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(912, 617);
+            this.Controls.Add(this.btnKill);
+            this.Controls.Add(this.btnChange);
             this.Controls.Add(this.BtnEnd);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnSave);
@@ -163,6 +189,8 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button BtnEnd;
+        private System.Windows.Forms.Button btnChange;
+        private System.Windows.Forms.Button btnKill;
     }
 }
 

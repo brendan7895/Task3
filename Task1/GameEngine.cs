@@ -17,6 +17,11 @@
             return gameMap.Redraw();
         }
 
+        public void redraw()
+        {
+            gameMap.Redraw();
+        }
+
         public string UnitsString(int i)
         {
             return gameMap.UnitsCombo(i);
@@ -55,6 +60,16 @@
         public void ReadAll()
         {
             gameMap.Read();
+        }
+
+        public void End()
+        {
+            gameMap.Destroy();
+        }
+
+        public void changeTeams()
+        {
+            gameMap.Change();
         }
     }
 }

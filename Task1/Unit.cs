@@ -21,6 +21,7 @@ namespace Task1
         public string Symbol { get => symbol; set => symbol = value; }
         public string Team { get => team; set => team = value; }
         public int HP { get => hP; set => hP = value; }
+        public string Name { get => name; set => name = value; }
 
         public Unit(int xPos, int yPos, int maxHP, int HP, int speed, int attack, int atkRange, string team, string symbol, string name)
         {
@@ -33,7 +34,7 @@ namespace Task1
             this.atkRange = atkRange;
             this.team = team;
             this.symbol = symbol;
-            this.name = name;
+            this.Name = name;
         }
 
         public abstract void Attack();

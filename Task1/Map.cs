@@ -33,7 +33,7 @@ namespace Task1
                 int x = rand.Next(0, 20);
                 int y = rand.Next(0, 20);
 
-                int teamRand = rand.Next(0, 2);
+                int teamRand = rand.Next(0, 4);
 
                 if (teamRand == 0)
                 {
@@ -43,7 +43,15 @@ namespace Task1
                 {
                     units[i] = new RangedUnit(x, y, 100, 100, 1, 10, 10, Teams(), "W", "Ranged");
                 }
-                mapArr[units[i].XPos, units[i].YPos] = units[i].Team;
+                if(teamRand == 2)
+                {
+                    units[i] = new Rogue(x, y, 100, 100, 1, 15, 5, Teams(), "V", "Rogue");
+                }
+                if(teamRand == 3)
+                {
+                    units[i] = new Dragon(x, y, 200, 200, 1, 20, 10, Teams(), "D", "Dragon");
+                }
+                mapArr[units[i].XPos, units[i].YPos] = units[i].Symbol;
             }
 
             for (int i = 0; i < buildings.Length; i++)
@@ -100,28 +108,28 @@ namespace Task1
                     if (units[i].XPos < temp.XPos)
                     {
                         units[i].updatePos("d");
-                        mapArr[units[i].XPos, units[i].YPos] = units[i].Team;
+                        mapArr[units[i].XPos, units[i].YPos] = units[i].Symbol;
                         mapArr[units[i].XPos - 1, units[i].YPos] = ".";
                     }
 
                     if (units[i].XPos > temp.XPos)
                     {
                         units[i].updatePos("a");
-                        mapArr[units[i].XPos, units[i].YPos] = units[i].Team;
+                        mapArr[units[i].XPos, units[i].YPos] = units[i].Symbol;
                         mapArr[units[i].XPos + 1, units[i].YPos] = ".";
                     }
 
                     if (units[i].YPos < temp.YPos)
                     {
                         units[i].updatePos("s");
-                        mapArr[units[i].XPos, units[i].YPos] = units[i].Team;
+                        mapArr[units[i].XPos, units[i].YPos] = units[i].Symbol;
                         mapArr[units[i].XPos, units[i].YPos - 1] = ".";
                     }
 
                     if (units[i].YPos > temp.YPos)
                     {
                         units[i].updatePos("w");
-                        mapArr[units[i].XPos, units[i].YPos] = units[i].Team;
+                        mapArr[units[i].XPos, units[i].YPos] = units[i].Symbol;
                         mapArr[units[i].XPos, units[i].YPos + 1] = ".";
                     }
                 }
@@ -146,7 +154,7 @@ namespace Task1
                             case 0:
                                 {
                                     units[i].updatePos("d");
-                                    mapArr[units[i].XPos, units[i].YPos] = units[i].Team;
+                                    mapArr[units[i].XPos, units[i].YPos] = units[i].Symbol;
                                     mapArr[units[i].XPos - 1, units[i].YPos] = ".";
 
                                 }
@@ -154,7 +162,7 @@ namespace Task1
                             case 1:
                                 {
                                     units[i].updatePos("a");
-                                    mapArr[units[i].XPos, units[i].YPos] = units[i].Team;
+                                    mapArr[units[i].XPos, units[i].YPos] = units[i].Symbol;
                                     mapArr[units[i].XPos + 1, units[i].YPos] = ".";
 
                                 }
@@ -162,14 +170,14 @@ namespace Task1
                             case 2:
                                 {
                                     units[i].updatePos("s");
-                                    mapArr[units[i].XPos, units[i].YPos] = units[i].Team;
+                                    mapArr[units[i].XPos, units[i].YPos] = units[i].Symbol;
                                     mapArr[units[i].XPos, units[i].YPos - 1] = ".";
                                 }
                                 break;
                             case 3:
                                 {
                                     units[i].updatePos("w");
-                                    mapArr[units[i].XPos, units[i].YPos] = units[i].Team;
+                                    mapArr[units[i].XPos, units[i].YPos] = units[i].Symbol;
                                     mapArr[units[i].XPos, units[i].YPos + 1] = ".";
                                 }
                                 break;
@@ -350,6 +358,14 @@ namespace Task1
                 {
                     units[i] = new MeleeUnit(x, y, hp, 100, 1, 10, 10, team, symbol, type);
                 }
+                if(type == "Rogue")
+                {
+                    units[i] = new Rogue(x, y, hp, 100, 1, 15, 5, team, symbol, type);
+                }
+                if(type == "Dragon")
+                {
+                    units[i] = new Dragon(x, y, hp, 200, 1, 20, 10, team, symbol, type);
+                }
 
                 mapArr[units[i].XPos, units[i].YPos] = units[i].Symbol;
             }
@@ -384,6 +400,32 @@ namespace Task1
             }
             building.Close();
 
+        }
+
+        public void Destroy()
+        {
+            for (int i = 0; i < numUnits; i++)
+            {
+                units[i].HP = 0;
+            }
+            
+        }
+
+        public void Change()//teams will be changed not symbols
+        {
+            for(int i = 0; i < numUnits; i++)
+            {
+                if (units[i].Team == "M" || units[i].Team == "m")
+                {
+                    units[i].Team = "S";
+                }
+                else
+                {
+                    units[i].Team = "M";
+                }
+            }
+            
+            
         }
     }
 }

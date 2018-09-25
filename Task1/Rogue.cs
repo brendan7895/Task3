@@ -1,11 +1,10 @@
 ﻿using System;
 using System.IO;
-
 namespace Task1
 {
-    public class MeleeUnit : Unit
+    public class Rogue : Unit
     {
-        public MeleeUnit(int xPos, int yPos, int HP, int maxHP, int speed, int attack, int atkRange, string team, string symbol, string name) : base(xPos, yPos, HP, maxHP, speed, attack, atkRange, team, symbol, name)
+        public Rogue(int xPos, int yPos, int HP, int maxHP, int speed, int attack, int atkRange, string team, string symbol, string name) : base(xPos, yPos, HP, maxHP, speed, attack, atkRange, team, symbol, name)
         {
 
         }
@@ -21,7 +20,7 @@ namespace Task1
             int x = Math.Abs(xPos - enemyX);
             int y = Math.Abs(yPos - enemyY);
 
-            if ((x+y) <= atkRange)
+            if ((x + y) <= atkRange)
             {
                 value = true;
             }
@@ -31,7 +30,7 @@ namespace Task1
         public override bool isDead()
         {
             bool value = false;
-            if(HP <= 0)
+            if (HP <= 0)
             {
                 value = true;
             }
@@ -44,7 +43,7 @@ namespace Task1
             {
                 Symbol = "Dead";
             }
-            return Name+ "," + symbol + "," + team + "," + xPos + "," + yPos + ","  + HP;
+            return Name + "," + symbol + "," + team + "," + xPos + "," + yPos + "," + HP;
         }
 
         public override void SaveUnit() //saves the unit to string to a text file

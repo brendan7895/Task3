@@ -8,11 +8,13 @@ namespace Task1
         private int resourcesTick; //enter tick value in seconds
         private int total;
 
+        public int Total { get => total; set => total = value; }
+
         public ResourceBuilding(int xPos, int yPos, int health, string team, string symbol, int resourcesTick, int total, string type) : base(xPos, yPos, health, team, symbol, type)
         {
             this.type = type;
             this.resourcesTick = resourcesTick;
-            this.total = total;
+            this.Total = total;
         }
 
         public override bool isDead()
@@ -37,9 +39,9 @@ namespace Task1
             bool value = false;
             if (counter % resourcesTick == 0)
             {
-                total--;
+                Total--;
                 value = true;
-                if (total <= 0)
+                if (Total <= 0)
                 {
                     value = false;
                 }

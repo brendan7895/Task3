@@ -74,7 +74,7 @@ namespace Task1
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-
+            cmbInfo.Items.Clear();
             lblMap.Text = "";
             Game.ReadAll();
             lblMap.Text = Game.playGame();
@@ -93,6 +93,27 @@ namespace Task1
         {
             Game.SaveAll();
             this.Close();
+        }
+
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            cmbInfo.Items.Clear();
+            Game.changeTeams();
+            lblMap.Text = Game.playGame();//play game redraws but also plays a turn. Causes everything to move when clicked
+
+            for (int i = 0; i < Game.numUnit(); i++) //add units to the combo box
+            {
+                cmbInfo.Items.Add(Game.UnitsString(i));
+            }
+            for (int i = 0; i < Game.numBuilding(); i++)
+            {
+                cmbInfo.Items.Add(Game.BuildInfo(i));
+            }
+        }
+
+        private void btnKill_Click(object sender, EventArgs e)
+        {
+            Game.End();
         }
     }
 }
